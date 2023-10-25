@@ -28,6 +28,6 @@ $db->addServer(array (
   'database' => $_ENV['DATABASE'],
   'engine' => 'InnoDB',
   'sslCa' => 'ssl/cacert.pem',
-  'sslVerify' => true,
+  'sslVerify' => 'true',
 ), \Typecho\Db::READ | \Typecho\Db::WRITE);
 \Typecho\Db::set($db);
