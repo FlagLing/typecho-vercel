@@ -539,11 +539,12 @@ function themeConfig($form)
     'JAside_3DTag',
     array(
       'off' => '关闭（默认）',
-      'on' => '开启'
+      '3D' => '开启3D云标签',
+	  'color' => '开启多彩云标签',
     ),
     'off',
     '是否开启3D云标签 - PC',
-    '介绍：用于设置侧边栏是否显示3D云标签'
+    '介绍：用于设置侧边栏是否显示云标签'
   );
   $JAside_3DTag->setAttribute('class', 'joe_content joe_aside');
   $form->addInput($JAside_3DTag->multiMode());
