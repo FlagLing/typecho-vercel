@@ -176,13 +176,12 @@
           <path d="M898.048 556.544L547.84 916.992c-43.008 44.032-112.64 44.032-155.648 0L119.808 636.416c-43.008-44.032-43.008-116.224 0-160.256L470.016 115.2c26.624-28.672 31.744-41.472 59.904-41.472h355.84c28.16 0 50.688 23.552 50.688 52.224v366.592c0 28.672-15.872 40.448-38.4 64zM158.72 596.48l272.384 280.576c21.504 22.016 56.32 22.016 77.824 0l38.4-39.936-349.696-361.472-39.424 40.448c-20.992 22.528-20.992 58.368.512 80.384zm727.04-444.416c0-14.336-11.264-26.112-25.6-26.112H555.008c-13.824 0-33.792 16.384-46.592 29.184l-271.36 280.576 349.696 360.96 272.384-280.576c13.824-14.336 26.624-35.328 26.624-49.664V152.064zM610.304 422.4c-42.496-43.52-42.496-114.688 0-158.208 42.496-44.032 111.104-44.032 153.6 0 42.496 43.52 42.496 114.688 0 158.208s-111.616 43.52-153.6 0zm115.2-118.784c-20.992-22.016-55.808-22.016-76.8 0s-20.992 57.344 0 79.36 55.808 22.016 76.8 0 20.992-57.344 0-79.36z" />
         </svg>
         <span class="text">标签云</span>
-	<span><?php $this->options->JAside_Tag; ?></span>
         <span class="line"></span>
       </div>
       <?php $this->widget('Widget_Metas_Tag_Cloud', array('sort' => 'count', 'ignoreZeroCount' => true, 'desc' => true, 'limit' => 50))->to($tags); ?>
       <div class="joe_aside__item-contain">
 		<?php if ($tags->have()) : ?>
-			<?php if ($this->options->JAside_Tag === '3D') : ?>
+			<?php if ($this->options->JAside_3DTag === '3D') : ?>
 				<div class="tag"></div>
 				<ul class="list" style="display: none;">
 					<?php while ($tags->next()) : ?>
@@ -190,7 +189,7 @@
 					<?php endwhile; ?>
 				</ul>
 			<?php endif; ?>
-			<?php if ($this->options->JAside_Tag === 'color') : ?>
+			<?php if ($this->options->JAside_3DTag === 'color') : ?>
 				<div class="common-tags">
 					<?php while ($tags->next()) : ?>
 						<a class="common-tag" style="color:rgb(<?php echo(rand(0,255)); ?>,<?php echo(rand(0,255)); ?>,<?php echo(rand(0,255)); ?>)" target="_blank" href="<?php $tags->permalink(); ?>" data-toggle="tooltip" data-placement="top" title="<?php $tags->count(); ?> 篇文章"><?php $tags->name(); ?></a>
