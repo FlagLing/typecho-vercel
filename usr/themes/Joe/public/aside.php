@@ -189,7 +189,7 @@
 					<?php endwhile; ?>
 				</ul>
 			<?php endif; ?>
-			<?php if ($this->options->JAside_Tag === 'COLOR') : ?>
+			<?php if ($this->options->JAside_Tag === 'color') : ?>
 				<div class="common-tags">
 					<?php while ($tags->next()) : ?>
 						<a class="common-tag" style="color:rgb(<?php echo(rand(0,255)); ?>,<?php echo(rand(0,255)); ?>,<?php echo(rand(0,255)); ?>)" target="_blank" href="<?php $tags->permalink(); ?>" data-toggle="tooltip" data-placement="top" title="<?php $tags->count(); ?> 篇文章"><?php $tags->name(); ?></a>
