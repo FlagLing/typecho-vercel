@@ -169,7 +169,7 @@
       </div>
     </section>
   <?php endif; ?>
-  <?php if ($this->options->JAside_3DTag === 'on') : ?>
+  <?php if ($this->options->JAside_3DTag !== 'off') : ?>
     <section class="joe_aside__item tags">
       <div class="joe_aside__item-title">
         <svg class="icon" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" width="18" height="18">
@@ -180,13 +180,22 @@
       </div>
       <?php $this->widget('Widget_Metas_Tag_Cloud', array('sort' => 'count', 'ignoreZeroCount' => true, 'desc' => true, 'limit' => 50))->to($tags); ?>
       <div class="joe_aside__item-contain">
-        <?php if ($tags->have()) : ?>
-          <div class="tag"></div>
-          <ul class="list" style="display: none;">
-            <?php while ($tags->next()) : ?>
-              <li data-url="<?php $tags->permalink(); ?>" data-label="<?php $tags->name(); ?>"></li>
-            <?php endwhile; ?>
-          </ul>
+		<?php if ($tags->have()) : ?>
+			<?php if ($this->options->JAside_Tag === '3D') : ?>
+				<div class="tag"></div>
+				<ul class="list" style="display: none;">
+					<?php while ($tags->next()) : ?>
+						<li data-url="<?php $tags->permalink(); ?>" data-label="<?php $tags->name(); ?>"></li>
+					<?php endwhile; ?>
+				</ul>
+			<?php endif; ?>
+			<?php if ($this->options->JAside_Tag === 'COLOR') : ?>
+				<div class="common-tags">
+					<?php while ($tags->next()) : ?>
+						<a class="common-tag" style="color:rgb(<?php echo(rand(0,255)); ?>,<?php echo(rand(0,255)); ?>,<?php echo(rand(0,255)); ?>)" target="_blank" href="<?php $tags->permalink(); ?>" data-toggle="tooltip" data-placement="top" title="<?php $tags->count(); ?> 篇文章"><?php $tags->name(); ?></a>
+					<?php endwhile; ?>
+				</div>
+			<?php endif; ?>
         <?php else : ?>
           <div class="empty">暂无标签</div>
         <?php endif; ?>
@@ -221,3 +230,29 @@
     </section>
   <?php endif; ?>
 </aside>
+
+<style>
+    .joe_aside .joe_aside__item .common-tags {
+        display: grid;
+        grid-row-gap: 8px;
+        grid-column-gap: 8px;
+        grid-template-columns: repeat(3, calc((100% - 16px) / 3));
+    }
+
+    .joe_aside .joe_aside__item .common-tag {
+        height: 35px;
+        border-radius: 7px;
+        display: block;
+        line-height: 35px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        color: #f5f5f5;
+        padding: 0 6px;
+        text-align: center;
+    }
+
+    .joe_aside .joe_aside__item .common-tag:hover {
+		background-color: #333;
+        color: #f5f5f5;
+    }
+</style>

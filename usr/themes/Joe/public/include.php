@@ -32,7 +32,7 @@
 <script src="<?php _getAssets('assets/lib/fancybox@3.5.7/fancybox.min.js'); ?>"></script>
 <script src="<?php _getAssets('assets/lib/extend/extend.min.js'); ?>"></script>
 <script src="<?php _getAssets('assets/lib/qmsg/qmsg.min.js'); ?>"></script>
-<?php if ($this->options->JAside_3DTag === 'on') : ?>
+<?php if ($this->options->JAside_3DTag !== 'off') : ?>
   <script src="<?php _getAssets('assets/lib/3dtag/3dtag.min.js'); ?>"></script>
 <?php endif; ?>
 <script src="<?php _getAssets('assets/lib/smooth/smooth.min.js'); ?>" async></script>
