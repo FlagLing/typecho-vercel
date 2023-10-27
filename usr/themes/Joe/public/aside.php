@@ -192,7 +192,7 @@
 			<?php if ($this->options->JAside_3DTag === 'color') : ?>
 				<div class="common-tags">
 					<?php while ($tags->next()) : ?>
-						<a class="common-tag" style="color:rgb(<?php echo(rand(0,255)); ?>,<?php echo(rand(0,255)); ?>,<?php echo(rand(0,255)); ?>)" target="_blank" href="<?php $tags->permalink(); ?>" data-toggle="tooltip" data-placement="top" title="<?php $tags->count(); ?> 篇文章"><?php $tags->name(); ?></a>
+						<a class="common-tag" style="background-color:rgb(<?php echo(rand(0,255)); ?>,<?php echo(rand(0,255)); ?>,<?php echo(rand(0,255)); ?>)" target="_blank" href="<?php $tags->permalink(); ?>" data-toggle="tooltip" data-placement="top" title="<?php $tags->count(); ?> 篇文章"><?php $tags->name(); ?></a>
 					<?php endwhile; ?>
 				</div>
 			<?php endif; ?>
@@ -252,7 +252,7 @@
     }
 
     .joe_aside .joe_aside__item .common-tag:hover {
-		background-color: #333;
+	background-color: #333;
         color: #f5f5f5;
     }
 </style>
