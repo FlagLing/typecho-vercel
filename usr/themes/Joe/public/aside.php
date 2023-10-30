@@ -192,7 +192,7 @@
 			<?php if ($this->options->JAside_3DTag === 'color') : ?>
 				<div class="common-tags">
 					<?php while ($tags->next()) : ?>
-						<a class="common-tag" style="color:rgb(<?php echo(rand(0,255)); ?>,<?php echo(rand(0,255)); ?>,<?php echo(rand(0,255)); ?>);border:1px solid #dcdcdc" target="_blank" href="<?php $tags->permalink(); ?>" data-toggle="tooltip" data-placement="top" title="<?php $tags->count(); ?> 篇文章"><?php $tags->name(); ?></a>
+						<a class="common-tag" style="background-color:rgb(<?php echo(rand(0,255)); ?>,<?php echo(rand(0,255)); ?>,<?php echo(rand(0,255)); ?>);border:1px solid #dcdcdc" target="_blank" href="<?php $tags->permalink(); ?>" data-toggle="tooltip" data-placement="top" title="<?php $tags->count(); ?> 篇文章"><?php $tags->name(); ?></a>
 					<?php endwhile; ?>
 				</div>
 			<?php endif; ?>
@@ -232,18 +232,11 @@
 </aside>
 
 <style>
-    .joe_aside .joe_aside__item .common-tags {
-        display: grid;
-        grid-row-gap: 8px;
-        grid-column-gap: 8px;
-        grid-template-columns: repeat(4, calc((100% - 16px) / 4));
-    }
 
     .joe_aside .joe_aside__item .common-tag {
-        height: 35px;
-        border-radius: 7px;
-        display: block;
-        line-height: 35px;
+        border-radius: 5px;
+        display: inline-block;
+        line-height: 25px;
         overflow: hidden;
         text-overflow: ellipsis;
         color: #f5f5f5;
