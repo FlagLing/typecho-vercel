@@ -235,9 +235,9 @@
 
     .joe_aside .joe_aside__item .common-tag {
         border-radius: 5px;
-	border:1px solid #d2d2d2;
+	user-select: none;
         display: inline-block;
-        line-height: 25px;
+        line-height: 20px;
         overflow: hidden;
         text-overflow: ellipsis;
         padding: 0 6px;
