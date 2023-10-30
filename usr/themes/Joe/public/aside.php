@@ -190,7 +190,7 @@
 				</ul>
 			<?php endif; ?>
 			<?php if ($this->options->JAside_3DTag === 'color') : ?>
-				<div class="common-tags">
+				<div style="user-select: none;">
 					<?php while ($tags->next()) : ?>
 						<a class="common-tag" style="color:rgb(<?php echo(rand(0,255)); ?>,<?php echo(rand(0,255)); ?>,<?php echo(rand(0,255)); ?>);border:1px solid #dcdcdc" target="_blank" href="<?php $tags->permalink(); ?>" data-toggle="tooltip" data-placement="top" title="<?php $tags->count(); ?> 篇文章"><?php $tags->name(); ?></a>
 					<?php endwhile; ?>
