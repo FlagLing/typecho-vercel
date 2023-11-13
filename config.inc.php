@@ -31,6 +31,3 @@ $db->addServer(array (
   'sslVerify' => 'true',
 ), \Typecho\Db::READ | \Typecho\Db::WRITE);
 \Typecho\Db::set($db);
-
-/** 初始化主题 */
-@require_once __TYPECHO_ROOT_DIR__ . __TYPECHO_THEME_DIR__ . "/echo/var/init.php";
