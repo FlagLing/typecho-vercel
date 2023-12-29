@@ -35,13 +35,7 @@
 			</a>
 		</div>
 	</div>
-	<a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="<?php $this->options->author_site() ?>">
-		<i class="fas fa-link">
-		</i>
-		<span>
-			<?php $this->options->author_site_description() ?>
-		</span>
-	</a>
+
 	<?php if($this->options->author_bottom != null) : ?>
 	<div class="card-info-social-icons is-center"><?php $this->options->author_bottom() ?></div>
     <?php elseif(!$this->options->author_bottom) : ?>
